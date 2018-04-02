@@ -1,5 +1,5 @@
 PODS:
-  - RxPhotos (0.1.0):
+  - RxPhotos (1.0.1):
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
 
@@ -12,7 +12,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  RxPhotos: 14f8d08cf577d76b7d93bd3ea48a4dc9ab532288
+  RxPhotos: 710c60c216ee3a190c56e106e455ccffcad90728
   RxSwift: e49536837d9901277638493ea537394d4b55f570
 
 PODFILE CHECKSUM: 9493d17dfd137cfdb314e89b1e6a055719f2cab0

@@ -8,9 +8,43 @@
 
 This library is a tiny wrapper around some callback-based Photos' framework functions.
 
-## Example
+## Usage
 
-To run the example project, clone the repo, and run `pod install` from the iOS Example directory first.
+Request image:
+```swift
+PHImageManager.default().rx.requestImage(
+            for: asset,
+            targetSize: CGSize(width: 120, height: 200),
+            contentMode: PHImageContentMode.aspectFit,
+            options: nil
+            ).subscribe(onNext: { image in
+                //
+            }).disposed(by: disposeBag)
+```
+
+Watch PHPhotoLibrary changes:
+```swift
+PHPhotoLibrary.shared().rx.photoLibraryChange
+            .subscribe(onNext: { change in
+                //
+            }).disposed(by: disposeBag)
+```
+
+Request authorization:
+```swift
+PHPhotoLibrary.rx.requestAuthorization()
+            .subscribe(onSuccess: { status in
+                //
+            }).disposed(by: disposeBag)
+```
+
+Perform changes on photo library:
+```swift
+PHPhotoLibrary.shared().rx.performChanges({ /**/ })
+            .subscribe(onSuccess: { result in
+                //
+            }).disposed(by: disposeBag)
+```
 
 ## Installation
 
@@ -56,6 +90,13 @@ github "istered/RxPhotos"
 
 Run `carthage update` to build the framework and drag the built `RxPhotos`.framework into your Xcode project.
 
+
+## Dependencies
+* [RxSwift](https://github.com/ReactiveX/RxSwift) ~> 4.0
+
+## Requirements
+* iOS 10+
+* Swift 4.0+ 
 
 ## Author
 
